@@ -2,11 +2,11 @@
 
 public class StateTransition
 {
-    public string InitialState { get; }
+    public int InitialState { get; }
     public string Input { get; }
-    public string ResultState { get; }
+    public int ResultState { get; }
 
-    public StateTransition(string initialState, string input, string resultState)
+    public StateTransition(int initialState, string input, int resultState)
     {
         InitialState = initialState;
         Input = input;

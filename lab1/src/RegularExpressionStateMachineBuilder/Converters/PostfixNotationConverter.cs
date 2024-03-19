@@ -32,13 +32,13 @@ internal class PostfixNotationConverter
             {
                 var symbol = expression[i];
             
-                if (IsLetter(symbol) || IsPostfixOperator(symbol))
+                if (IsLetter(symbol) || _alphabetDefinition.IsPostfixOperator(symbol))
                     output.Add(symbol);
-                else if (IsOpeningBracket(symbol))
+                else if (_alphabetDefinition.IsOpeningBracket(symbol))
                     stack.Push(symbol);
-                else if (IsClosingBracket(symbol))
+                else if (_alphabetDefinition.IsClosingBracket(symbol))
                 {
-                    while (!IsOpeningBracket(stack.Peek()))
+                    while (!_alphabetDefinition.IsOpeningBracket(stack.Peek()))
                     {
                         var stackSymbol = stack.Pop();
 
@@ -47,10 +47,10 @@ internal class PostfixNotationConverter
 
                     stack.Pop();
                 }
-                else if (IsBinaryOperation(symbol))
+                else if (_alphabetDefinition.IsBinaryOperation(symbol))
                 {
                     while (stack.Count != 0 
-                           && IsBinaryOperation(stack.Peek())
+                           && _alphabetDefinition.IsBinaryOperation(stack.Peek())
                            && GetBinaryOperationPriority(stack.Peek()) >= GetBinaryOperationPriority(symbol))
                     {
                         var stackSymbol = stack.Pop();
@@ -75,10 +75,13 @@ internal class PostfixNotationConverter
         {
             var stackSymbol = stack.Pop();
 
-            if (!IsPostfixOperator(stackSymbol) && !IsBinaryOperation(stackSymbol))
+            if (!_alphabetDefinition.IsPostfixOperator(stackSymbol) &&
+                !_alphabetDefinition.IsBinaryOperation(stackSymbol))
+            {
                 throw new InvalidRegularExpressionException("Invalid regular expression passed. Mismatched brackets");
+            }
 
-            
+
             output.Add(stackSymbol);
         }
 
@@ -88,27 +91,6 @@ internal class PostfixNotationConverter
     private bool IsLetter(char symbol)
     {
         return _alphabetDefinition.Letters.Contains(symbol);
-    }
-
-    private bool IsPostfixOperator(char symbol)
-    {
-        return symbol == _alphabetDefinition.KleeneStarSymbol;
-    }
-
-    private bool IsOpeningBracket(char symbol)
-    {
-        return symbol == _alphabetDefinition.OpeningBracketSymbol;
-    }
-
-    private bool IsClosingBracket(char symbol)
-    {
-        return symbol == _alphabetDefinition.ClosingBracketSymbol;
-    }
-
-    private bool IsBinaryOperation(char symbol)
-    {
-        return symbol == _alphabetDefinition.ConcatSymbol ||
-               symbol == _alphabetDefinition.UnionSymbol;
     }
 
     private int GetBinaryOperationPriority(char operationSymbol)

@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegularExpressionStateMachi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grammar", "Grammar\Grammar.csproj", "{CD5B88BA-F8F9-47AB-8395-F7449D48ABB1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StateMachineVisualization", "StateMachineVisualization\StateMachineVisualization.csproj", "{2CAB7F23-2833-4A1C-9FD4-9D49C6702A88}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{CD5B88BA-F8F9-47AB-8395-F7449D48ABB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CD5B88BA-F8F9-47AB-8395-F7449D48ABB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CD5B88BA-F8F9-47AB-8395-F7449D48ABB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CAB7F23-2833-4A1C-9FD4-9D49C6702A88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CAB7F23-2833-4A1C-9FD4-9D49C6702A88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CAB7F23-2833-4A1C-9FD4-9D49C6702A88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CAB7F23-2833-4A1C-9FD4-9D49C6702A88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

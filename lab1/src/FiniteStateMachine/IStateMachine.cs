@@ -2,8 +2,8 @@
 
 public interface IStateMachine
 {
-    public IReadOnlyCollection<string> States { get; }
+    public IReadOnlyCollection<int> States { get; }
     public IReadOnlyCollection<StateTransition> Transitions { get; }
-    public string InitialState { get; }
-    public string FinalState { get; }
+    public int InitialState { get; }
+    public int FinalState { get; }
 }
