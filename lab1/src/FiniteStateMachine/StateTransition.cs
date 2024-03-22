@@ -3,10 +3,10 @@
 public class StateTransition
 {
     public int InitialState { get; }
-    public string Input { get; }
+    public char Input { get; }
     public int ResultState { get; }
 
-    public StateTransition(int initialState, string input, int resultState)
+    public StateTransition(int initialState, char input, int resultState)
     {
         InitialState = initialState;
         Input = input;

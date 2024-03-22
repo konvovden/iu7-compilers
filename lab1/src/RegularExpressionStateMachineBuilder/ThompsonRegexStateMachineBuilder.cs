@@ -16,25 +16,10 @@ public class ThompsonRegexStateMachineBuilder : IRegexStateMachineBuilder
     public IStateMachine BuildStateMachineFromRegularExpression(string regularExpression)
     {
         var expression = PrepareExpression(regularExpression);
-        
-        // (a|b)*cd
-        // Postfix: a b | * c _ d _
-        
-        // (a|b)*_(c|d)
-        // Postfix: a b | * c d | _
-        
-        // (a|b)*cd*(f|e)
-        // Postfix: a b | * c _ d * _ f e | _
-        
-        // (a|b((()
-        // Error
-        
-        // (a|(d(fe)))c
-        // Postfix: a d f e _ _ | c _
 
-        var stateMachine = CreateStateMachineFromExpression(expression); // TOOD: Exceptions handling
+        var stateMachine = CreateStateMachineFromExpression(expression); // TODO: Exceptions handling
 
-        return stateMachine;
+        return BeautifyStateMachine(stateMachine);
     }
 
     private IStateMachine CreateStateMachineFromExpression(string expression)
@@ -91,7 +76,7 @@ public class ThompsonRegexStateMachineBuilder : IRegexStateMachineBuilder
 
         var transitions = new List<StateTransition>
         {
-            new(states[0], letter.ToString(), states[1])
+            new(states[0], letter, states[1])
         };
 
         return new StateMachine(states,
@@ -128,12 +113,80 @@ public class ThompsonRegexStateMachineBuilder : IRegexStateMachineBuilder
 
     private IStateMachine UnionStateMachines(IStateMachine left, IStateMachine right)
     {
-        throw new NotImplementedException();
+        var deduplicatedRight = RemoveDuplicateStates(right, left);
+
+        var states = left.States
+            .Concat(deduplicatedRight.States)
+            .Order()
+            .ToList();
+
+        var initialState = states.Last() + 1;
+        var finalState = initialState + 1;
+        
+        states.Add(initialState);
+        states.Add(finalState);
+
+        var transitions = left.Transitions
+            .Concat(deduplicatedRight.Transitions)
+            .ToList();
+
+        transitions.Add(new StateTransition(initialState, 
+            _alphabetDefinition.EpsilonSymbol,
+            left.InitialState));
+        
+        transitions.Add(new StateTransition(initialState,
+            _alphabetDefinition.EpsilonSymbol,
+            deduplicatedRight.InitialState));
+        
+        transitions.Add(new StateTransition(left.FinalState,
+            _alphabetDefinition.EpsilonSymbol,
+            finalState));
+        
+        transitions.Add(new StateTransition(deduplicatedRight.FinalState,
+            _alphabetDefinition.EpsilonSymbol,
+            finalState));
+
+        return new StateMachine(states,
+            transitions,
+            initialState,
+            finalState);
     }
 
     private IStateMachine AddKleeneStarToStateMachine(IStateMachine stateMachine)
     {
-        throw new NotImplementedException();
+        var states = stateMachine.States
+            .Order()
+            .ToList();
+
+        var initialState = states.Last() + 1;
+        var finalState = initialState + 1;
+
+        states.Add(initialState);
+        states.Add(finalState);
+        
+        var transitions = stateMachine.Transitions
+            .ToList();
+        
+        transitions.Add(new StateTransition(stateMachine.FinalState, 
+            _alphabetDefinition.EpsilonSymbol,
+            stateMachine.InitialState));
+        
+        transitions.Add(new StateTransition(initialState, 
+            _alphabetDefinition.EpsilonSymbol,
+            stateMachine.InitialState));
+        
+        transitions.Add(new StateTransition(stateMachine.FinalState,
+            _alphabetDefinition.EpsilonSymbol,
+            finalState));
+        
+        transitions.Add(new StateTransition(initialState,
+            _alphabetDefinition.EpsilonSymbol,
+            finalState));
+
+        return new StateMachine(states,
+            transitions,
+            initialState,
+            finalState);
     }
 
     private static IStateMachine RemoveDuplicateStates(IStateMachine from, IStateMachine with)
@@ -171,6 +224,27 @@ public class ThompsonRegexStateMachineBuilder : IRegexStateMachineBuilder
             transitions,
             initialState,
             finalState);
+    }
+
+    private IStateMachine BeautifyStateMachine(IStateMachine stateMachine)
+    {
+        var changes = new Dictionary<int, int>()
+        {
+            {stateMachine.InitialState, 0},
+            {stateMachine.FinalState, stateMachine.States.Count + 1}
+        };
+        
+        var innerStates = stateMachine.States
+            .Order()
+            .Where(s => s != stateMachine.InitialState && s != stateMachine.FinalState)
+            .ToList();
+
+        for (var i = 0; i < innerStates.Count; i++)
+        {
+            changes[innerStates[i]] = i + 1;
+        }
+
+        return ChangeStateMachineStates(stateMachine, changes);
     }
     
     private string PrepareExpression(string expression)

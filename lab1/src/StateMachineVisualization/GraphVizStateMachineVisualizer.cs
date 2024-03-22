@@ -13,26 +13,35 @@ public static class GraphVizStateMachineVisualizer
     {
         var graphString = ConvertStateMachineToGraphVizString(stateMachine);
 
-        File.WriteAllText(filename + ".viz", graphString);
+        var graphStringPath = filename + ".viz";
+        File.WriteAllText(graphStringPath, graphString);
+
+        Console.WriteLine($"Saved StateMachine to file '{graphStringPath}'");
         
         var fileBytes = ConvertGraphVizToPng(graphString);
-        
-        File.WriteAllBytes(filename + ".png", fileBytes);
+
+        var pngPath = filename + ".png";
+        File.WriteAllBytes(pngPath, fileBytes);
+
+        Console.WriteLine($"Saved StateMachine image to file '{pngPath}'");
     }
 
     private static string ConvertStateMachineToGraphVizString(IStateMachine stateMachine)
     {
         var graph = new Graph("state_machine");
         graph.type = "digraph";
+        graph.Attribute.rankdir.Value = "LR";
 
-        foreach (var state in stateMachine.States)
+        foreach (var state in stateMachine.States.Order())
         {
-            if (state == stateMachine.InitialState)
-            {
-                
-            }
+            var node = new Node(state.ToString());
+
+            if (state == stateMachine.InitialState || state == stateMachine.FinalState)
+                node.Attribute.shape.Value = "doublecircle";
+            else
+                node.Attribute.shape.Value = "circle";
             
-            graph.AddElement(new Node(state.ToString()));
+            graph.AddElement(node);
         }
         
         foreach (var transition in stateMachine.Transitions)
@@ -64,7 +73,7 @@ public static class GraphVizStateMachineVisualizer
         {
             Config =
             {
-                GraphVizBinariesDirectory = "/bin/"
+                //GraphVizBinariesDirectory = "/bin/"
             }
         };
 
