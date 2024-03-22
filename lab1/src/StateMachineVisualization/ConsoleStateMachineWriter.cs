@@ -2,7 +2,7 @@
 
 namespace StateMachineVisualization;
 
-public class ConsoleStateMachineWriter
+public static class ConsoleStateMachineWriter
 {
     public static void WriteStateMachineToConsole(IStateMachine stateMachine)
     {
@@ -24,7 +24,5 @@ public class ConsoleStateMachineWriter
         Console.WriteLine();
         Console.WriteLine($"Initial: {stateMachine.InitialState}");
         Console.WriteLine($"Final: {stateMachine.FinalState}");
-
-        Console.ReadKey();
     }
 }

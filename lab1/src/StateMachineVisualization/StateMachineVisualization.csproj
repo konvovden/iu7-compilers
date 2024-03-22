@@ -11,4 +11,9 @@
       <ProjectReference Include="..\FiniteStateMachine\FiniteStateMachine.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="csdot" Version="2.0.1" />
+      <PackageReference Include="GraphVizNet" Version="1.0.3" />
+    </ItemGroup>
+
 </Project>

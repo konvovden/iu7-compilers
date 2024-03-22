@@ -13,7 +13,7 @@ public static class Program
         
         Console.WriteLine("Input regular expression:");
         //var regularExpression = Console.ReadLine()!;
-        var regularExpression = "ab";
+        var regularExpression = "abcd";
         
         Console.WriteLine($"Regular expression: '{regularExpression}'");
         
@@ -22,5 +22,8 @@ public static class Program
         var stateMachine = stateMachineBuilder.BuildStateMachineFromRegularExpression(regularExpression);
 
         ConsoleStateMachineWriter.WriteStateMachineToConsole(stateMachine);
+        GraphVizStateMachineVisualizer.SaveStateMachineGraphToFile(stateMachine, "test");
+
+        Console.ReadKey();
     }
 }
