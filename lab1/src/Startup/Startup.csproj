@@ -10,6 +10,7 @@
     <ItemGroup>
       <ProjectReference Include="..\FiniteStateMachine\FiniteStateMachine.csproj" />
       <ProjectReference Include="..\RegularExpressionStateMachineBuilder\RegularExpressionStateMachineBuilder.csproj" />
+      <ProjectReference Include="..\StateMachineDeterminer\StateMachineDeterminer.csproj" />
       <ProjectReference Include="..\StateMachineVisualization\StateMachineVisualization.csproj" />
     </ItemGroup>
 

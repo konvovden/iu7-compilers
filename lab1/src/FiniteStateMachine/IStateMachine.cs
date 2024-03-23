@@ -2,8 +2,9 @@
 
 public interface IStateMachine
 {
-    public IReadOnlyCollection<int> States { get; }
-    public IReadOnlyCollection<StateTransition> Transitions { get; }
+    public IReadOnlySet<int> States { get; }
+    public IReadOnlySet<StateTransition> Transitions { get; }
+    public IReadOnlySet<char> Symbols { get; }
     public int InitialState { get; }
-    public int FinalState { get; }
+    public IReadOnlySet<int> FinalStates { get; }
 }

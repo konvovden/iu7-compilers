@@ -1,5 +1,6 @@
 ﻿using Grammar;
 using RegularExpressionStateMachineBuilder;
+using StateMachineDeterminer;
 using StateMachineVisualization;
 
 namespace Startup;
@@ -31,13 +32,21 @@ public static class Program
         
         var stateMachineBuilder = new ThompsonRegexStateMachineBuilder(alphabet);
         
-        var stateMachine = stateMachineBuilder.BuildStateMachineFromRegularExpression(regularExpression);
+        var nfa = stateMachineBuilder.BuildStateMachineFromRegularExpression(regularExpression);
 
         Console.WriteLine("Created NFA from regular expression.");
 
-        ConsoleStateMachineWriter.WriteStateMachineToConsole(stateMachine);
-        GraphVizStateMachineVisualizer.SaveStateMachineGraphToFile(stateMachine, "nfa");
+        // ConsoleStateMachineWriter.WriteStateMachineToConsole(nfa);
+        GraphVizStateMachineVisualizer.SaveStateMachineGraphToFile(nfa, "nfa");
 
+        var stateMachineDeterminer = new ThompsonStateMachineDeterminer(alphabet);
+
+        var dfa = stateMachineDeterminer.DetermineStateMachine(nfa);
+        
+        Console.WriteLine("Created DFA from NFA.");
+        
+        GraphVizStateMachineVisualizer.SaveStateMachineGraphToFile(dfa, "dfa");
+        
         Console.ReadKey();
     }
 }

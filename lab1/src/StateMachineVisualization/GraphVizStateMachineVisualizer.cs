@@ -36,7 +36,7 @@ public static class GraphVizStateMachineVisualizer
         {
             var node = new Node(state.ToString());
 
-            if (state == stateMachine.InitialState || state == stateMachine.FinalState)
+            if (state == stateMachine.InitialState || stateMachine.FinalStates.Contains(state))
                 node.Attribute.shape.Value = "doublecircle";
             else
                 node.Attribute.shape.Value = "circle";
@@ -73,7 +73,7 @@ public static class GraphVizStateMachineVisualizer
         {
             Config =
             {
-                //GraphVizBinariesDirectory = "/bin/"
+                GraphVizBinariesDirectory = "/bin/"
             }
         };
 

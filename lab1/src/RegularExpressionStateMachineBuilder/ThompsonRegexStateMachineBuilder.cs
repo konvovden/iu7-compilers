@@ -91,7 +91,7 @@ public class ThompsonRegexStateMachineBuilder : IRegexStateMachineBuilder
         
         var stateChanges = new Dictionary<int, int>
         {
-            {deduplicatedRight.InitialState, left.FinalState}
+            {deduplicatedRight.InitialState, left.FinalStates.First()}
         };
         
         var concatRight = ChangeStateMachineStates(deduplicatedRight, stateChanges);
@@ -108,7 +108,7 @@ public class ThompsonRegexStateMachineBuilder : IRegexStateMachineBuilder
         return new StateMachine(states,
             transitions,
             left.InitialState,
-            concatRight.FinalState);
+            concatRight.FinalStates.First());
     }
 
     private IStateMachine UnionStateMachines(IStateMachine left, IStateMachine right)
@@ -138,11 +138,11 @@ public class ThompsonRegexStateMachineBuilder : IRegexStateMachineBuilder
             _alphabetDefinition.EpsilonSymbol,
             deduplicatedRight.InitialState));
         
-        transitions.Add(new StateTransition(left.FinalState,
+        transitions.Add(new StateTransition(left.FinalStates.First(),
             _alphabetDefinition.EpsilonSymbol,
             finalState));
         
-        transitions.Add(new StateTransition(deduplicatedRight.FinalState,
+        transitions.Add(new StateTransition(deduplicatedRight.FinalStates.First(),
             _alphabetDefinition.EpsilonSymbol,
             finalState));
 
@@ -167,7 +167,7 @@ public class ThompsonRegexStateMachineBuilder : IRegexStateMachineBuilder
         var transitions = stateMachine.Transitions
             .ToList();
         
-        transitions.Add(new StateTransition(stateMachine.FinalState, 
+        transitions.Add(new StateTransition(stateMachine.FinalStates.First(), 
             _alphabetDefinition.EpsilonSymbol,
             stateMachine.InitialState));
         
@@ -175,7 +175,7 @@ public class ThompsonRegexStateMachineBuilder : IRegexStateMachineBuilder
             _alphabetDefinition.EpsilonSymbol,
             stateMachine.InitialState));
         
-        transitions.Add(new StateTransition(stateMachine.FinalState,
+        transitions.Add(new StateTransition(stateMachine.FinalStates.First(),
             _alphabetDefinition.EpsilonSymbol,
             finalState));
         
@@ -218,7 +218,7 @@ public class ThompsonRegexStateMachineBuilder : IRegexStateMachineBuilder
             .ToList();
 
         var initialState = changes.GetValueOrDefault(stateMachine.InitialState, stateMachine.InitialState);
-        var finalState = changes.GetValueOrDefault(stateMachine.FinalState, stateMachine.FinalState);
+        var finalState = changes.GetValueOrDefault(stateMachine.FinalStates.First(), stateMachine.FinalStates.First());
 
         return new StateMachine(states,
             transitions,
@@ -231,12 +231,12 @@ public class ThompsonRegexStateMachineBuilder : IRegexStateMachineBuilder
         var changes = new Dictionary<int, int>()
         {
             {stateMachine.InitialState, 0},
-            {stateMachine.FinalState, stateMachine.States.Count + 1}
+            {stateMachine.FinalStates.First(), stateMachine.States.Count + 1}
         };
         
         var innerStates = stateMachine.States
             .Order()
-            .Where(s => s != stateMachine.InitialState && s != stateMachine.FinalState)
+            .Where(s => s != stateMachine.InitialState && s != stateMachine.FinalStates.First())
             .ToList();
 
         for (var i = 0; i < innerStates.Count; i++)

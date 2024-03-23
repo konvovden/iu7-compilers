@@ -2,19 +2,25 @@
 
 public class StateMachine : IStateMachine
 {
-    public IReadOnlyCollection<int> States { get; }
-    public IReadOnlyCollection<StateTransition> Transitions { get; }
+    public IReadOnlySet<int> States { get; }
+    public IReadOnlySet<StateTransition> Transitions { get; }
+    public IReadOnlySet<char> Symbols { get; }
     public int InitialState { get; }
-    public int FinalState { get; }
+    public IReadOnlySet<int> FinalStates { get; }
 
-    public StateMachine(IReadOnlyCollection<int> states,
-        IReadOnlyCollection<StateTransition> transitions,
+    public StateMachine(IEnumerable<int> states,
+        IEnumerable<StateTransition> transitions,
         int initialState,
         int finalState)
     {
-        States = states;
-        Transitions = transitions;
+        States = states.ToHashSet();
+        Transitions = transitions.ToHashSet();
         InitialState = initialState;
-        FinalState = finalState;
+        FinalStates = new HashSet<int> {finalState};
+
+        Symbols = Transitions
+            .Select(t => t.Input)
+            .Distinct()
+            .ToHashSet();
     }
 }

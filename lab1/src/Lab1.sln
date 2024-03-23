@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grammar", "Grammar\Grammar.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StateMachineVisualization", "StateMachineVisualization\StateMachineVisualization.csproj", "{2CAB7F23-2833-4A1C-9FD4-9D49C6702A88}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StateMachineDeterminer", "StateMachineDeterminer\StateMachineDeterminer.csproj", "{EFAB21A2-7B12-452E-A25E-3C0D7AB9677D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{2CAB7F23-2833-4A1C-9FD4-9D49C6702A88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CAB7F23-2833-4A1C-9FD4-9D49C6702A88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CAB7F23-2833-4A1C-9FD4-9D49C6702A88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFAB21A2-7B12-452E-A25E-3C0D7AB9677D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFAB21A2-7B12-452E-A25E-3C0D7AB9677D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFAB21A2-7B12-452E-A25E-3C0D7AB9677D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFAB21A2-7B12-452E-A25E-3C0D7AB9677D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

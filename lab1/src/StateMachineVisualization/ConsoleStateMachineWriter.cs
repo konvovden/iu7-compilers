@@ -23,6 +23,6 @@ public static class ConsoleStateMachineWriter
 
         Console.WriteLine();
         Console.WriteLine($"Initial: {stateMachine.InitialState}");
-        Console.WriteLine($"Final: {stateMachine.FinalState}");
+        Console.WriteLine($"Final: {string.Join(" ", stateMachine.FinalStates)}");
     }
 }
