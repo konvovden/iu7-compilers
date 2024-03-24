@@ -7,7 +7,7 @@ public class StateMachine : IStateMachine
     public IReadOnlySet<char> Symbols { get; }
     public int InitialState { get; }
     public IReadOnlySet<int> FinalStates { get; }
-    
+
     public StateMachine(IEnumerable<int> states,
         IEnumerable<StateTransition> transitions,
         int initialState,
@@ -30,5 +30,23 @@ public class StateMachine : IStateMachine
         int finalState) : this(states, transitions, initialState, [finalState])
     {
         
+    }
+    
+    public bool Simulate(string inputString)
+    {
+        var currentState = InitialState;
+        
+        foreach (var symbol in inputString)
+        {
+            var transition = Transitions
+                .FirstOrDefault(t => t.InitialState == currentState && t.Input == symbol);
+
+            if (transition is null)
+                return false;
+
+            currentState = transition.ResultState;
+        }
+
+        return FinalStates.Contains(currentState);
     }
 }

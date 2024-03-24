@@ -2,9 +2,11 @@
 
 public interface IStateMachine
 {
-    public IReadOnlySet<int> States { get; }
-    public IReadOnlySet<StateTransition> Transitions { get; }
-    public IReadOnlySet<char> Symbols { get; }
-    public int InitialState { get; }
-    public IReadOnlySet<int> FinalStates { get; }
+    IReadOnlySet<int> States { get; }
+    IReadOnlySet<StateTransition> Transitions { get; }
+    IReadOnlySet<char> Symbols { get; }
+    int InitialState { get; }
+    IReadOnlySet<int> FinalStates { get; }
+
+    bool Simulate(string inputString);
 }

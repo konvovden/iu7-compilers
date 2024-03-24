@@ -55,7 +55,16 @@ public static class Program
         Console.WriteLine("Created minimal DFA from DFA.");
         
         GraphVizStateMachineVisualizer.SaveStateMachineGraphToFile(minDfa, "minDfa");
-        
-        Console.ReadKey();
+
+        while (true)
+        {
+            Console.WriteLine("Input string to check:");
+
+            var inputString = Console.ReadLine()!;
+
+            var result = minDfa.Simulate(inputString);
+            
+            Console.WriteLine($"Result: {result}");
+        }
     }
 }
