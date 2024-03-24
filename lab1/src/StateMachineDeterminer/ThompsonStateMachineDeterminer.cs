@@ -62,15 +62,14 @@ public class ThompsonStateMachineDeterminer : IStateMachineDeterminer
             .Select(s => newStatesSets.IndexOf(s))
             .First();
 
-        var finalState = newStatesSets
+        var finalStates = newStatesSets
             .Where(s => s.Overlaps(stateMachine.FinalStates))
-            .Select(s => newStatesSets.IndexOf(s))
-            .First();
+            .Select(s => newStatesSets.IndexOf(s));
 
         return new StateMachine(newStates,
             transitions,
             initialState,
-            finalState);
+            finalStates);
     }
 
     private HashSet<int> CalculateEClosure(IStateMachine stateMachine, int state)
