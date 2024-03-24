@@ -1,5 +1,6 @@
 using FiniteStateMachine;
 using Grammar;
+using StateMachineUtils;
 
 namespace StateMachineDeterminer;
 
@@ -52,7 +53,7 @@ public class ThompsonStateMachineDeterminer : IStateMachineDeterminer
                 new StateTransition(newStatesSets.FindIndex(s => s.SetEquals(t.Item1)),
                     t.Item2,
                     newStatesSets.FindIndex(s => s.SetEquals(t.Item3))))
-            .Distinct(new StateTransitionComparer());
+            .Distinct(new StateTransitionEqualityComparer());
 
         newStates = newStates
             .Where(s => transitions.Any(t => t.InitialState == s || t.ResultState == s));
@@ -118,22 +119,5 @@ public class ThompsonStateMachineDeterminer : IStateMachineDeterminer
             .Where(t => states.Contains(t.InitialState) && t.Input == symbol)
             .Select(t => t.ResultState)
             .ToHashSet();
-    }
-    
-    private class StateTransitionComparer : IEqualityComparer<StateTransition>
-    {
-        public bool Equals(StateTransition x, StateTransition y)
-        {
-            if (ReferenceEquals(x, y)) return true;
-            if (ReferenceEquals(x, null)) return false;
-            if (ReferenceEquals(y, null)) return false;
-            if (x.GetType() != y.GetType()) return false;
-            return x.InitialState == y.InitialState && x.Input == y.Input && x.ResultState == y.ResultState;
-        }
-
-        public int GetHashCode(StateTransition obj)
-        {
-            return HashCode.Combine(obj.InitialState, obj.Input, obj.ResultState);
-        }
     }
 }

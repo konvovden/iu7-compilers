@@ -1,6 +1,7 @@
 ﻿using Grammar;
 using RegularExpressionStateMachineBuilder;
 using StateMachineDeterminer;
+using StateMachineMinimizer;
 using StateMachineVisualization;
 
 namespace Startup;
@@ -46,6 +47,14 @@ public static class Program
         Console.WriteLine("Created DFA from NFA.");
         
         GraphVizStateMachineVisualizer.SaveStateMachineGraphToFile(dfa, "dfa");
+
+        var stateMachineMinimizer = new HopcroftStateMachineMinimizer();
+
+        var minDfa = stateMachineMinimizer.MinimizeStateMachine(dfa);
+        
+        Console.WriteLine("Created minimal DFA from DFA.");
+        
+        GraphVizStateMachineVisualizer.SaveStateMachineGraphToFile(minDfa, "minDfa");
         
         Console.ReadKey();
     }

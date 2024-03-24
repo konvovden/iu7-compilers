@@ -8,6 +8,8 @@ namespace StateMachineVisualization;
 
 public static class GraphVizStateMachineVisualizer
 {
+    private const string BEGIN_NODE_ID = "BEGIN";
+    
     public static void SaveStateMachineGraphToFile(IStateMachine stateMachine,
         string filename)
     {
@@ -32,6 +34,12 @@ public static class GraphVizStateMachineVisualizer
         graph.type = "digraph";
         graph.Attribute.rankdir.Value = "LR";
 
+        var beginNode = new Node(BEGIN_NODE_ID);
+        beginNode.Attribute.shape.Value = "point";
+        beginNode.Attribute.label.Value = "";
+        
+        graph.AddElement(beginNode);
+        
         foreach (var state in stateMachine.States.Order())
         {
             var node = new Node(state.ToString());
@@ -43,6 +51,15 @@ public static class GraphVizStateMachineVisualizer
             
             graph.AddElement(node);
         }
+        
+        graph.AddElement(new Edge()
+        {
+            Transition = new List<Transition>()
+            {
+                new Transition(BEGIN_NODE_ID, EdgeOp.directed),
+                new Transition(stateMachine.InitialState.ToString(), EdgeOp.unspecified)
+            }
+        });
         
         foreach (var transition in stateMachine.Transitions)
         {

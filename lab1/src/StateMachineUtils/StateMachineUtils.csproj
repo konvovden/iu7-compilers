@@ -8,8 +8,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\FiniteStateMachine\FiniteStateMachine.csproj" />
-      <ProjectReference Include="..\Grammar\Grammar.csproj" />
-      <ProjectReference Include="..\StateMachineUtils\StateMachineUtils.csproj" />
     </ItemGroup>
 
 </Project>
