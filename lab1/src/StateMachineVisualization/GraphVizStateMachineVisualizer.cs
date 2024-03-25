@@ -44,7 +44,7 @@ public static class GraphVizStateMachineVisualizer
         {
             var node = new Node(state.ToString());
 
-            if (state == stateMachine.InitialState || stateMachine.FinalStates.Contains(state))
+            if (stateMachine.FinalStates.Contains(state))
                 node.Attribute.shape.Value = "doublecircle";
             else
                 node.Attribute.shape.Value = "circle";

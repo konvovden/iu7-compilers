@@ -26,8 +26,8 @@ public static class Program
         var alphabet = AlphabetDefinition.CreateDefault();
         
         Console.WriteLine("Input regular expression:");
-        //var regularExpression = Console.ReadLine()!;
-        var regularExpression = "(a|b)*abb(a|b)*";
+        var regularExpression = Console.ReadLine()!;
+        //var regularExpression = "(a|b)*abb(a|b)*";
         
         Console.WriteLine($"Regular expression: '{regularExpression}'");
         
