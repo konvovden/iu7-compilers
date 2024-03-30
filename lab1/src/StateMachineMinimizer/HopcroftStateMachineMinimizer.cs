@@ -17,6 +17,9 @@ public class HopcroftStateMachineMinimizer : IStateMachineMinimizer
                 equivalentClasses.FindIndex(c => c.Contains(t.ResultState))))
             .Distinct(new StateTransitionEqualityComparer());
 
+        newStates = newStates
+            .Where(s => newTransitions.Any(t => t.InitialState == s || t.ResultState == s));
+        
         var initialState = equivalentClasses.FindIndex(c => c.Contains(stateMachine.InitialState));
 
         var finalStates = stateMachine.FinalStates
@@ -103,7 +106,7 @@ public class HopcroftStateMachineMinimizer : IStateMachineMinimizer
 
                     foreach (var symbol in stateMachine.Symbols)
                     {
-                        queue.Enqueue(([j], symbol));
+                        queue.Enqueue((P[j], symbol));
                     }
                 }
             }

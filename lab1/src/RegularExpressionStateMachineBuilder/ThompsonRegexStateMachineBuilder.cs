@@ -17,7 +17,7 @@ public class ThompsonRegexStateMachineBuilder : IRegexStateMachineBuilder
     {
         var expression = PrepareExpression(regularExpression);
 
-        var stateMachine = CreateStateMachineFromExpression(expression); // TODO: Exceptions handling
+        var stateMachine = CreateStateMachineFromExpression(expression); 
 
         return BeautifyStateMachine(stateMachine);
     }
@@ -60,7 +60,7 @@ public class ThompsonRegexStateMachineBuilder : IRegexStateMachineBuilder
                 stack.Push(kleeneStarStateMachine);
             }
             else
-                throw new InvalidOperationException("Invalid symbol"); // TODO:
+                throw new InvalidOperationException("Invalid symbol"); 
         }
 
         return stack.Pop();
@@ -89,26 +89,28 @@ public class ThompsonRegexStateMachineBuilder : IRegexStateMachineBuilder
     {
         var deduplicatedRight = RemoveDuplicateStates(right, left);
         
-        var stateChanges = new Dictionary<int, int>
+        /*var stateChanges = new Dictionary<int, int>
         {
             {deduplicatedRight.InitialState, left.FinalStates.First()}
         };
         
-        var concatRight = ChangeStateMachineStates(deduplicatedRight, stateChanges);
+        var concatRight = ChangeStateMachineStates(deduplicatedRight, stateChanges);*/
         
         var states = left.States
-            .Concat(concatRight.States)
+            .Concat(deduplicatedRight.States)
             .Distinct()
             .ToList();
-
+        
         var transitions = left.Transitions
-            .Concat(concatRight.Transitions)
+            .Concat(deduplicatedRight.Transitions)
             .ToList();
+        
+        transitions.Add(new StateTransition(left.FinalStates.First(), _alphabetDefinition.EpsilonSymbol, deduplicatedRight.InitialState));
 
         return new StateMachine(states,
             transitions,
             left.InitialState,
-            concatRight.FinalStates.First());
+            deduplicatedRight.FinalStates.First());
     }
 
     private IStateMachine UnionStateMachines(IStateMachine left, IStateMachine right)
@@ -197,7 +199,7 @@ public class ThompsonRegexStateMachineBuilder : IRegexStateMachineBuilder
         
         foreach (var state in from.States)
         {
-            if (with.States.Contains(state))
+            if (with.States.Contains(state) || changes.ContainsValue(state))
                 changes[state] = ++lastUsedState;
         }
 

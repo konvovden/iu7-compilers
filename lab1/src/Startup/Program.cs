@@ -10,15 +10,13 @@ public static class Program
 {
     // https://cyberzhg.github.io/toolbox/regex2nfa
     // (a|b)*cd
-        
-    // (a|b)*_(c|d)
+    
+    // (a*|b*)*
         
     // (a|b)*cd*(f|e)
         
     // (a|b((() - ERROR
         
-    // (a|(d(fe)))c
-    
     // (a|b)*abb(a|b)*
     
     public static void Main()

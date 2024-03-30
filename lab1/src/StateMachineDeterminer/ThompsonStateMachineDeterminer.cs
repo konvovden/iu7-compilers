@@ -65,7 +65,8 @@ public class ThompsonStateMachineDeterminer : IStateMachineDeterminer
 
         var finalStates = newStatesSets
             .Where(s => s.Overlaps(stateMachine.FinalStates))
-            .Select(s => newStatesSets.IndexOf(s));
+            .Select(s => newStatesSets.IndexOf(s))
+            .Where(s => newStates.Contains(s));
 
         return new StateMachine(newStates,
             transitions,
