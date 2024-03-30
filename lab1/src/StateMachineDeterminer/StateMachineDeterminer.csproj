@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\FiniteStateMachine\FiniteStateMachine.csproj" />
+      <ProjectReference Include="..\Grammar\Grammar.csproj" />
+      <ProjectReference Include="..\StateMachineUtils\StateMachineUtils.csproj" />
+    </ItemGroup>
+
+</Project>
