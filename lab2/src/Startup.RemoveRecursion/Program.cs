@@ -10,20 +10,19 @@ public class Program
     // https://cyberzhg.github.io/toolbox/left_rec
     public static void Main(string[] args)
     {
-        /*var grammar = new GrammarDescription(["S", "A"],
-            ["a", "b", "c", "d"],
+        /*var grammar = new GrammarDescription(["S"],
+            ["+", "(", ")", "*", "a"],
             new Dictionary<string, List<List<string>>>
             {
-                {"S", [["A", "a"], ["b"]]},
-                {"A", [["A", "c"], ["S", "d"], [GrammarDescription.Epsilon]]}
+                {"S", [["S", "+", "S"], ["S", "S"], ["(", "S", ")"], ["S", "*"], ["a"]]}
             },
             "S");
 
         var writer = new JsonGrammarWriter();
-        writer.WriteGrammarToFile("examples/4_11.json", grammar);*/
+        writer.WriteGrammarToFile("examples/3.json", grammar);*/
 
         IGrammarReader grammarReader = new JsonGrammarReader();
-        var grammar = grammarReader.ReadGrammarFromFile("examples/4_11.json");
+        var grammar = grammarReader.ReadGrammarFromFile("examples/1.json");
         
         IGrammarPrinter grammarPrinter = new ConsoleGrammarPrinter();
         

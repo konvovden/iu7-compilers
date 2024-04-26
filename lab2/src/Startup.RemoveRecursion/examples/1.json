@@ -1,0 +1,56 @@
+{
+  "NonTerminals": [
+    "bexpr",
+    "bterm",
+    "bfactor"
+  ],
+  "Terminals": [
+    "true",
+    "false",
+    "or",
+    "and",
+    "not",
+    "(",
+    ")"
+  ],
+  "Productions": {
+    "bexpr": [
+      [
+        "bexpr",
+        "or",
+        "bterm"
+      ],
+      [
+        "bterm"
+      ]
+    ],
+    "bterm": [
+      [
+        "bterm",
+        "and",
+        "bfactor"
+      ],
+      [
+        "bfactor"
+      ]
+    ],
+    "bfactor": [
+      [
+        "not",
+        "bfactor"
+      ],
+      [
+        "(",
+        "bexpr",
+        ")"
+      ],
+      [
+        "true"
+      ],
+      [
+        "false"
+      ]
+    ]
+  },
+  "Axiom": "bexpr"
+}

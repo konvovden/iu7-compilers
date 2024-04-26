@@ -9,19 +9,16 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        /*var grammar = new GrammarDescription(["S", "A", "B", "C"],
-            ["a", "b"],
+        /*var grammar = new GrammarDescription(["A"],
+            ["a", "b", "c", "d"],
             new Dictionary<string, List<List<string>>>
             {
-                {"S", [["A", "B", "C"]]},
-                {"A", [["B", "B"], [GrammarDescription.Epsilon]]},
-                {"B", [["C", "C"], ["a"]]},
-                {"C", [["A", "A"], ["b"]]}
+                {"A", [["A", "c"], ["A", "a", "d"], ["b", "d"], [GrammarDescription.Epsilon]]},
             },
-            "S");
+            "A");
 
         var writer = new JsonGrammarWriter();
-        writer.WriteGrammarToFile("examples/2_4_11.json", grammar);*/
+        writer.WriteGrammarToFile("examples/3.json", grammar);*/
 
         IGrammarReader grammarReader = new JsonGrammarReader();
         var grammar = grammarReader.ReadGrammarFromFile("examples/2_4_11.json");
