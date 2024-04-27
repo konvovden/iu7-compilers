@@ -1,0 +1,24 @@
+{
+  "NonTerminals": [
+    "S"
+  ],
+  "Terminals": [
+    "(",
+    ")"
+  ],
+  "Productions": {
+    "S": [
+      [
+        "S",
+        "(",
+        "S",
+        ")",
+        "S"
+      ],
+      [
+        "Eps"
+      ]
+    ]
+  },
+  "Axiom": "S"
+}
