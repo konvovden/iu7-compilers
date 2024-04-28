@@ -90,7 +90,7 @@ public static class GraphVizStateMachineVisualizer
         {
             Config =
             {
-                GraphVizBinariesDirectory = "/bin/"
+                //GraphVizBinariesDirectory = "/bin/"
             }
         };
 

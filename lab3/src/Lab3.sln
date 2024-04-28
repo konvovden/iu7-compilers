@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Startup", "Startup\Startup.csproj", "{02535F0C-E788-4EE0-B449-79240FB0E4FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextLexer", "TextLexer\TextLexer.csproj", "{A3891782-C11F-4F7E-ADA1-E5B796AB8E26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrammarParser", "GrammarParser\GrammarParser.csproj", "{0E955FFF-B586-4E70-94EE-60588A7B73CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DerivationTree", "DerivationTree\DerivationTree.csproj", "{D3BB1FCE-3360-4505-8E35-3048657AA64D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeVisualization", "TreeVisualization\TreeVisualization.csproj", "{CC7FF14E-0325-41B6-8AC5-976422C72B4C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{02535F0C-E788-4EE0-B449-79240FB0E4FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02535F0C-E788-4EE0-B449-79240FB0E4FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02535F0C-E788-4EE0-B449-79240FB0E4FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02535F0C-E788-4EE0-B449-79240FB0E4FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3891782-C11F-4F7E-ADA1-E5B796AB8E26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3891782-C11F-4F7E-ADA1-E5B796AB8E26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3891782-C11F-4F7E-ADA1-E5B796AB8E26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3891782-C11F-4F7E-ADA1-E5B796AB8E26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E955FFF-B586-4E70-94EE-60588A7B73CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E955FFF-B586-4E70-94EE-60588A7B73CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E955FFF-B586-4E70-94EE-60588A7B73CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E955FFF-B586-4E70-94EE-60588A7B73CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3BB1FCE-3360-4505-8E35-3048657AA64D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3BB1FCE-3360-4505-8E35-3048657AA64D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3BB1FCE-3360-4505-8E35-3048657AA64D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3BB1FCE-3360-4505-8E35-3048657AA64D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC7FF14E-0325-41B6-8AC5-976422C72B4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC7FF14E-0325-41B6-8AC5-976422C72B4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC7FF14E-0325-41B6-8AC5-976422C72B4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC7FF14E-0325-41B6-8AC5-976422C72B4C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
