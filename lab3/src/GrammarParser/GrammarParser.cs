@@ -51,7 +51,7 @@ public class GrammarParser : IGrammarParser
         var childNodes = new TreeNode[2];
 
         childNodes[0] = ParseOperator(lexer);
-        childNodes[1] = ParseTail(lexer);
+        childNodes[1] = ParseTail(lexer); 
 
         return new TreeNode("<operators list>", childNodes);
     }
@@ -60,20 +60,34 @@ public class GrammarParser : IGrammarParser
     {
         TreeNode[] childNodes;
 
-        if (lexer.NextToken == ";")
-        {
-            var pointDotNode = new TreeNode(";");
-            lexer.MoveNext();
+        if (lexer.NextToken != ";")
+            throw new ParsingException(lexer.NextTokenPosition);
+        
+        var pointDotNode = new TreeNode(";");
+        lexer.MoveNext();
 
+        var dashTailNode = ParseDashTail(lexer);
+
+        return new TreeNode("<tail>", [pointDotNode, dashTailNode]);
+    }
+
+    private TreeNode ParseDashTail(ILexer lexer)
+    {
+        TreeNode[] childNodes;
+        
+        if (IsIdentificator(lexer.NextToken) || lexer.NextToken == "{")
+        {
             var operatorNode = ParseOperator(lexer);
             var tailNode = ParseTail(lexer);
 
-            childNodes = [pointDotNode, operatorNode, tailNode];
+            childNodes = [operatorNode, tailNode];
         }
         else
+        {
             childNodes = [new TreeNode(EPSILON)];
+        }
 
-        return new TreeNode("<tail>", childNodes);
+        return new TreeNode("<tail>'", childNodes);
     }
 
     private TreeNode ParseOperator(ILexer lexer)

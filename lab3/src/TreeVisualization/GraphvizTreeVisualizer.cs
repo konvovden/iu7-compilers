@@ -63,7 +63,8 @@ public static class GraphvizTreeVisualizer
         {
             Config =
             {
-                GraphVizBinariesDirectory = "bin/Debug/net8.0/graphviz"
+                GraphVizBinariesDirectory = "/bin"
+                //GraphVizBinariesDirectory = "bin/Debug/net8.0/graphviz"
             }
         };
 

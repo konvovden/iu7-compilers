@@ -17,315 +17,327 @@ graph tree{
 6 [ label = "<tail>" ]
 6 -- 10 
 6 -- 11 
-6 -- 12 
 7 [ label = "<id>" ]
-7 -- 13 
+7 -- 12 
 8 [ label = "=" ]
 9 [ label = "<expression>" ]
+9 -- 13 
 9 -- 14 
 9 -- 15 
-9 -- 16 
 10 [ label = ";" ]
-11 [ label = "<operator>" ]
+11 [ label = "<tail>'" ]
+11 -- 16 
 11 -- 17 
-11 -- 18 
-11 -- 19 
-12 [ label = "<tail>" ]
-12 -- 20 
-12 -- 21 
-12 -- 22 
-13 [ label = "i" ]
-14 [ label = "<arithmetical expression>" ]
-14 -- 23 
-14 -- 24 
-15 [ label = "<relationship operation symbol>" ]
-15 -- 25 
-16 [ label = "<arithmetical expression>" ]
-16 -- 26 
-16 -- 27 
-17 [ label = "<id>" ]
-17 -- 28 
-18 [ label = "=" ]
-19 [ label = "<expression>" ]
-19 -- 29 
+12 [ label = "i" ]
+13 [ label = "<arithmetical expression>" ]
+13 -- 18 
+13 -- 19 
+14 [ label = "<relationship operation symbol>" ]
+14 -- 20 
+15 [ label = "<arithmetical expression>" ]
+15 -- 21 
+15 -- 22 
+16 [ label = "<operator>" ]
+16 -- 23 
+16 -- 24 
+16 -- 25 
+17 [ label = "<tail>" ]
+17 -- 26 
+17 -- 27 
+18 [ label = "<term>" ]
+18 -- 28 
+18 -- 29 
+19 [ label = "<arithmetical expression>'" ]
 19 -- 30 
-19 -- 31 
-20 [ label = ";" ]
-21 [ label = "<operator>" ]
+20 [ label = "==" ]
+21 [ label = "<term>" ]
+21 -- 31 
 21 -- 32 
-22 [ label = "<tail>" ]
+22 [ label = "<arithmetical expression>'" ]
 22 -- 33 
-23 [ label = "<term>" ]
+23 [ label = "<id>" ]
 23 -- 34 
-23 -- 35 
-24 [ label = "<arithmetical expression>'" ]
-24 -- 36 
-25 [ label = "==" ]
-26 [ label = "<term>" ]
-26 -- 37 
-26 -- 38 
-27 [ label = "<arithmetical expression>'" ]
+24 [ label = "=" ]
+25 [ label = "<expression>" ]
+25 -- 35 
+25 -- 36 
+25 -- 37 
+26 [ label = ";" ]
+27 [ label = "<tail>'" ]
+27 -- 38 
 27 -- 39 
-28 [ label = "b" ]
-29 [ label = "<arithmetical expression>" ]
-29 -- 40 
-29 -- 41 
-30 [ label = "<relationship operation symbol>" ]
-30 -- 42 
-31 [ label = "<arithmetical expression>" ]
+28 [ label = "<factor>" ]
+28 -- 40 
+28 -- 41 
+29 [ label = "<term>'" ]
+29 -- 42 
+30 [ label = "Eps" ]
+31 [ label = "<factor>" ]
 31 -- 43 
 31 -- 44 
-32 [ label = "<block>" ]
+32 [ label = "<term>'" ]
 32 -- 45 
-32 -- 46 
-32 -- 47 
 33 [ label = "Eps" ]
-34 [ label = "<factor>" ]
-34 -- 48 
-34 -- 49 
-35 [ label = "<term>'" ]
-35 -- 50 
-36 [ label = "Eps" ]
-37 [ label = "<factor>" ]
-37 -- 51 
-37 -- 52 
-38 [ label = "<term>'" ]
-38 -- 53 
-39 [ label = "Eps" ]
-40 [ label = "<term>" ]
+34 [ label = "b" ]
+35 [ label = "<arithmetical expression>" ]
+35 -- 46 
+35 -- 47 
+36 [ label = "<relationship operation symbol>" ]
+36 -- 48 
+37 [ label = "<arithmetical expression>" ]
+37 -- 49 
+37 -- 50 
+38 [ label = "<operator>" ]
+38 -- 51 
+39 [ label = "<tail>" ]
+39 -- 52 
+39 -- 53 
+40 [ label = "<primary expression>" ]
 40 -- 54 
-40 -- 55 
-41 [ label = "<arithmetical expression>'" ]
-41 -- 56 
-42 [ label = "==" ]
-43 [ label = "<term>" ]
-43 -- 57 
-43 -- 58 
-44 [ label = "<arithmetical expression>'" ]
-44 -- 59 
-45 [ label = "{" ]
-46 [ label = "<operators list>" ]
-46 -- 60 
-46 -- 61 
-47 [ label = "}" ]
-48 [ label = "<primary expression>" ]
-48 -- 62 
-49 [ label = "<factor>'" ]
-49 -- 63 
-50 [ label = "Eps" ]
-51 [ label = "<primary expression>" ]
+41 [ label = "<factor>'" ]
+41 -- 55 
+42 [ label = "Eps" ]
+43 [ label = "<primary expression>" ]
+43 -- 56 
+44 [ label = "<factor>'" ]
+44 -- 57 
+45 [ label = "Eps" ]
+46 [ label = "<term>" ]
+46 -- 58 
+46 -- 59 
+47 [ label = "<arithmetical expression>'" ]
+47 -- 60 
+48 [ label = "==" ]
+49 [ label = "<term>" ]
+49 -- 61 
+49 -- 62 
+50 [ label = "<arithmetical expression>'" ]
+50 -- 63 
+51 [ label = "<block>" ]
 51 -- 64 
-52 [ label = "<factor>'" ]
-52 -- 65 
-53 [ label = "Eps" ]
-54 [ label = "<factor>" ]
-54 -- 66 
-54 -- 67 
-55 [ label = "<term>'" ]
-55 -- 68 
-56 [ label = "Eps" ]
-57 [ label = "<factor>" ]
-57 -- 69 
-57 -- 70 
-58 [ label = "<term>'" ]
+51 -- 65 
+51 -- 66 
+52 [ label = ";" ]
+53 [ label = "<tail>'" ]
+53 -- 67 
+54 [ label = "<number>" ]
+54 -- 68 
+55 [ label = "Eps" ]
+56 [ label = "<number>" ]
+56 -- 69 
+57 [ label = "Eps" ]
+58 [ label = "<factor>" ]
+58 -- 70 
 58 -- 71 
-59 [ label = "Eps" ]
-60 [ label = "<operator>" ]
-60 -- 72 
-60 -- 73 
-60 -- 74 
-61 [ label = "<tail>" ]
-61 -- 75 
-62 [ label = "<number>" ]
-62 -- 76 
+59 [ label = "<term>'" ]
+59 -- 72 
+60 [ label = "Eps" ]
+61 [ label = "<factor>" ]
+61 -- 73 
+61 -- 74 
+62 [ label = "<term>'" ]
+62 -- 75 
 63 [ label = "Eps" ]
-64 [ label = "<number>" ]
-64 -- 77 
-65 [ label = "Eps" ]
-66 [ label = "<primary expression>" ]
-66 -- 78 
-66 -- 79 
-66 -- 80 
-67 [ label = "<factor>'" ]
-67 -- 81 
-68 [ label = "Eps" ]
-69 [ label = "<primary expression>" ]
-69 -- 82 
-70 [ label = "<factor>'" ]
-70 -- 83 
-71 [ label = "Eps" ]
-72 [ label = "<id>" ]
-72 -- 84 
-73 [ label = "=" ]
-74 [ label = "<expression>" ]
-74 -- 85 
-74 -- 86 
-74 -- 87 
+64 [ label = "{" ]
+65 [ label = "<operators list>" ]
+65 -- 76 
+65 -- 77 
+66 [ label = "}" ]
+67 [ label = "Eps" ]
+68 [ label = "5" ]
+69 [ label = "4" ]
+70 [ label = "<primary expression>" ]
+70 -- 78 
+70 -- 79 
+70 -- 80 
+71 [ label = "<factor>'" ]
+71 -- 81 
+72 [ label = "Eps" ]
+73 [ label = "<primary expression>" ]
+73 -- 82 
+74 [ label = "<factor>'" ]
+74 -- 83 
 75 [ label = "Eps" ]
-76 [ label = "5" ]
-77 [ label = "4" ]
+76 [ label = "<operator>" ]
+76 -- 84 
+76 -- 85 
+76 -- 86 
+77 [ label = "<tail>" ]
+77 -- 87 
+77 -- 88 
 78 [ label = "(" ]
 79 [ label = "<arithmetical expression>" ]
-79 -- 88 
 79 -- 89 
+79 -- 90 
 80 [ label = ")" ]
 81 [ label = "Eps" ]
 82 [ label = "<number>" ]
-82 -- 90 
+82 -- 91 
 83 [ label = "Eps" ]
-84 [ label = "a" ]
-85 [ label = "<arithmetical expression>" ]
-85 -- 91 
-85 -- 92 
-86 [ label = "<relationship operation symbol>" ]
+84 [ label = "<id>" ]
+84 -- 92 
+85 [ label = "=" ]
+86 [ label = "<expression>" ]
 86 -- 93 
-87 [ label = "<arithmetical expression>" ]
-87 -- 94 
-87 -- 95 
-88 [ label = "<term>" ]
+86 -- 94 
+86 -- 95 
+87 [ label = ";" ]
+88 [ label = "<tail>'" ]
 88 -- 96 
-88 -- 97 
-89 [ label = "<arithmetical expression>'" ]
+89 [ label = "<term>" ]
+89 -- 97 
 89 -- 98 
-89 -- 99 
-89 -- 100 
-90 [ label = "10" ]
-91 [ label = "<term>" ]
-91 -- 101 
-91 -- 102 
-92 [ label = "<arithmetical expression>'" ]
-92 -- 103 
-93 [ label = "==" ]
-94 [ label = "<term>" ]
+90 [ label = "<arithmetical expression>'" ]
+90 -- 99 
+90 -- 100 
+90 -- 101 
+91 [ label = "10" ]
+92 [ label = "a" ]
+93 [ label = "<arithmetical expression>" ]
+93 -- 102 
+93 -- 103 
+94 [ label = "<relationship operation symbol>" ]
 94 -- 104 
-94 -- 105 
-95 [ label = "<arithmetical expression>'" ]
+95 [ label = "<arithmetical expression>" ]
+95 -- 105 
 95 -- 106 
-96 [ label = "<factor>" ]
-96 -- 107 
-96 -- 108 
-97 [ label = "<term>'" ]
-97 -- 109 
-98 [ label = "<sum operation symbol>" ]
-98 -- 110 
-99 [ label = "<term>" ]
-99 -- 111 
-99 -- 112 
-100 [ label = "<arithmetical expression>'" ]
-100 -- 113 
-101 [ label = "<factor>" ]
-101 -- 114 
-101 -- 115 
-102 [ label = "<term>'" ]
-102 -- 116 
-102 -- 117 
-102 -- 118 
-103 [ label = "Eps" ]
-104 [ label = "<factor>" ]
-104 -- 119 
-104 -- 120 
-105 [ label = "<term>'" ]
-105 -- 121 
-106 [ label = "Eps" ]
+96 [ label = "Eps" ]
+97 [ label = "<factor>" ]
+97 -- 107 
+97 -- 108 
+98 [ label = "<term>'" ]
+98 -- 109 
+99 [ label = "<sum operation symbol>" ]
+99 -- 110 
+100 [ label = "<term>" ]
+100 -- 111 
+100 -- 112 
+101 [ label = "<arithmetical expression>'" ]
+101 -- 113 
+102 [ label = "<term>" ]
+102 -- 114 
+102 -- 115 
+103 [ label = "<arithmetical expression>'" ]
+103 -- 116 
+104 [ label = "==" ]
+105 [ label = "<term>" ]
+105 -- 117 
+105 -- 118 
+106 [ label = "<arithmetical expression>'" ]
+106 -- 119 
 107 [ label = "<primary expression>" ]
-107 -- 122 
+107 -- 120 
 108 [ label = "<factor>'" ]
-108 -- 123 
+108 -- 121 
 109 [ label = "Eps" ]
 110 [ label = "+" ]
 111 [ label = "<factor>" ]
-111 -- 124 
-111 -- 125 
+111 -- 122 
+111 -- 123 
 112 [ label = "<term>'" ]
-112 -- 126 
+112 -- 124 
 113 [ label = "Eps" ]
-114 [ label = "<primary expression>" ]
-114 -- 127 
-114 -- 128 
-114 -- 129 
-115 [ label = "<factor>'" ]
-115 -- 130 
-116 [ label = "<multiply operation symbol>" ]
-116 -- 131 
+114 [ label = "<factor>" ]
+114 -- 125 
+114 -- 126 
+115 [ label = "<term>'" ]
+115 -- 127 
+115 -- 128 
+115 -- 129 
+116 [ label = "Eps" ]
 117 [ label = "<factor>" ]
-117 -- 132 
-117 -- 133 
+117 -- 130 
+117 -- 131 
 118 [ label = "<term>'" ]
-118 -- 134 
-119 [ label = "<primary expression>" ]
-119 -- 135 
-120 [ label = "<factor>'" ]
-120 -- 136 
+118 -- 132 
+119 [ label = "Eps" ]
+120 [ label = "<id>" ]
+120 -- 133 
 121 [ label = "Eps" ]
-122 [ label = "<id>" ]
-122 -- 137 
-123 [ label = "Eps" ]
-124 [ label = "<primary expression>" ]
-124 -- 138 
-125 [ label = "<factor>'" ]
-125 -- 139 
-126 [ label = "Eps" ]
-127 [ label = "(" ]
-128 [ label = "<arithmetical expression>" ]
-128 -- 140 
+122 [ label = "<primary expression>" ]
+122 -- 134 
+123 [ label = "<factor>'" ]
+123 -- 135 
+124 [ label = "Eps" ]
+125 [ label = "<primary expression>" ]
+125 -- 136 
+125 -- 137 
+125 -- 138 
+126 [ label = "<factor>'" ]
+126 -- 139 
+127 [ label = "<multiply operation symbol>" ]
+127 -- 140 
+128 [ label = "<factor>" ]
 128 -- 141 
-129 [ label = ")" ]
-130 [ label = "Eps" ]
-131 [ label = "/" ]
-132 [ label = "<primary expression>" ]
-132 -- 142 
-133 [ label = "<factor>'" ]
-133 -- 143 
-134 [ label = "Eps" ]
-135 [ label = "<number>" ]
-135 -- 144 
-136 [ label = "Eps" ]
-137 [ label = "c" ]
-138 [ label = "<id>" ]
-138 -- 145 
+128 -- 142 
+129 [ label = "<term>'" ]
+129 -- 143 
+130 [ label = "<primary expression>" ]
+130 -- 144 
+131 [ label = "<factor>'" ]
+131 -- 145 
+132 [ label = "Eps" ]
+133 [ label = "c" ]
+134 [ label = "<id>" ]
+134 -- 146 
+135 [ label = "Eps" ]
+136 [ label = "(" ]
+137 [ label = "<arithmetical expression>" ]
+137 -- 147 
+137 -- 148 
+138 [ label = ")" ]
 139 [ label = "Eps" ]
-140 [ label = "<term>" ]
-140 -- 146 
-140 -- 147 
-141 [ label = "<arithmetical expression>'" ]
-141 -- 148 
-142 [ label = "<number>" ]
-142 -- 149 
+140 [ label = "/" ]
+141 [ label = "<primary expression>" ]
+141 -- 149 
+142 [ label = "<factor>'" ]
+142 -- 150 
 143 [ label = "Eps" ]
-144 [ label = "5" ]
-145 [ label = "d" ]
-146 [ label = "<factor>" ]
-146 -- 150 
-146 -- 151 
-147 [ label = "<term>'" ]
+144 [ label = "<number>" ]
+144 -- 151 
+145 [ label = "Eps" ]
+146 [ label = "d" ]
+147 [ label = "<term>" ]
 147 -- 152 
 147 -- 153 
-147 -- 154 
-148 [ label = "Eps" ]
-149 [ label = "10" ]
-150 [ label = "<primary expression>" ]
-150 -- 155 
-151 [ label = "<factor>'" ]
-151 -- 156 
-152 [ label = "<multiply operation symbol>" ]
+148 [ label = "<arithmetical expression>'" ]
+148 -- 154 
+149 [ label = "<number>" ]
+149 -- 155 
+150 [ label = "Eps" ]
+151 [ label = "5" ]
+152 [ label = "<factor>" ]
+152 -- 156 
 152 -- 157 
-153 [ label = "<factor>" ]
+153 [ label = "<term>'" ]
 153 -- 158 
 153 -- 159 
-154 [ label = "<term>'" ]
-154 -- 160 
-155 [ label = "<number>" ]
-155 -- 161 
-156 [ label = "Eps" ]
-157 [ label = "*" ]
-158 [ label = "<primary expression>" ]
-158 -- 162 
-159 [ label = "<factor>'" ]
-159 -- 163 
-160 [ label = "Eps" ]
-161 [ label = "5" ]
-162 [ label = "<number>" ]
-162 -- 164 
-163 [ label = "Eps" ]
-164 [ label = "4" ]
+153 -- 160 
+154 [ label = "Eps" ]
+155 [ label = "10" ]
+156 [ label = "<primary expression>" ]
+156 -- 161 
+157 [ label = "<factor>'" ]
+157 -- 162 
+158 [ label = "<multiply operation symbol>" ]
+158 -- 163 
+159 [ label = "<factor>" ]
+159 -- 164 
+159 -- 165 
+160 [ label = "<term>'" ]
+160 -- 166 
+161 [ label = "<number>" ]
+161 -- 167 
+162 [ label = "Eps" ]
+163 [ label = "*" ]
+164 [ label = "<primary expression>" ]
+164 -- 168 
+165 [ label = "<factor>'" ]
+165 -- 169 
+166 [ label = "Eps" ]
+167 [ label = "5" ]
+168 [ label = "<number>" ]
+168 -- 170 
+169 [ label = "Eps" ]
+170 [ label = "4" ]
 }
