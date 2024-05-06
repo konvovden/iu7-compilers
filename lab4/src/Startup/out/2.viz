@@ -1,22 +1,22 @@
 graph tree{
 0 [ label = "<expression>
-Attr: 5  4   *   10   /  5    ==" ]
+Attr: 5 4  * 10  / 5 ==" ]
 0 -- 1 
 0 -- 2 
 0 -- 3 
 1 [ label = "<arithmetical expression>
-Attr: 5  4   *   10   / " ]
+Attr: 5 4  * 10  /" ]
 1 -- 4 
 1 -- 5 
 2 [ label = "<relationship operation symbol>
 Attr: ==" ]
 2 -- 6 
 3 [ label = "<arithmetical expression>
-Attr: 5   " ]
+Attr: 5" ]
 3 -- 7 
 3 -- 8 
 4 [ label = "<term>
-Attr: 5  4   *   10   /" ]
+Attr: 5 4  * 10  /" ]
 4 -- 9 
 4 -- 10 
 5 [ label = "<arithmetical expression>'
@@ -25,25 +25,25 @@ Attr: " ]
 6 [ label = "==
 Attr: ==" ]
 7 [ label = "<term>
-Attr: 5  " ]
+Attr: 5" ]
 7 -- 12 
 7 -- 13 
 8 [ label = "<arithmetical expression>'
 Attr: " ]
 8 -- 14 
 9 [ label = "<factor>
-Attr: 5  4   *  " ]
+Attr: 5 4  *" ]
 9 -- 15 
 9 -- 16 
 10 [ label = "<term>'
-Attr: 10   /" ]
+Attr: 10  /" ]
 10 -- 17 
 10 -- 18 
 10 -- 19 
 11 [ label = "Eps
 Attr: " ]
 12 [ label = "<factor>
-Attr: 5 " ]
+Attr: 5" ]
 12 -- 20 
 12 -- 21 
 13 [ label = "<term>'
@@ -52,7 +52,7 @@ Attr: " ]
 14 [ label = "Eps
 Attr: " ]
 15 [ label = "<primary expression>
-Attr: 5  4   * " ]
+Attr: 5 4  *" ]
 15 -- 23 
 15 -- 24 
 15 -- 25 
@@ -63,7 +63,7 @@ Attr: " ]
 Attr: /" ]
 17 -- 27 
 18 [ label = "<factor>
-Attr: 10 " ]
+Attr: 10" ]
 18 -- 28 
 18 -- 29 
 19 [ label = "<term>'
@@ -80,7 +80,7 @@ Attr: " ]
 23 [ label = "(
 Attr: " ]
 24 [ label = "<arithmetical expression>
-Attr: 5  4   * " ]
+Attr: 5 4  *" ]
 24 -- 33 
 24 -- 34 
 25 [ label = ")
@@ -103,7 +103,7 @@ Attr: 5" ]
 32 [ label = "Eps
 Attr: " ]
 33 [ label = "<term>
-Attr: 5  4   *" ]
+Attr: 5 4  *" ]
 33 -- 38 
 33 -- 39 
 34 [ label = "<arithmetical expression>'
@@ -117,11 +117,11 @@ Attr: " ]
 37 [ label = "5
 Attr: 5" ]
 38 [ label = "<factor>
-Attr: 5 " ]
+Attr: 5" ]
 38 -- 42 
 38 -- 43 
 39 [ label = "<term>'
-Attr: 4   *" ]
+Attr: 4  *" ]
 39 -- 44 
 39 -- 45 
 39 -- 46 
@@ -139,7 +139,7 @@ Attr: " ]
 Attr: *" ]
 44 -- 49 
 45 [ label = "<factor>
-Attr: 4 " ]
+Attr: 4" ]
 45 -- 50 
 45 -- 51 
 46 [ label = "<term>'

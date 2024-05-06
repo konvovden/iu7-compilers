@@ -12,21 +12,23 @@ class Program
 
         var exampleFile = $"examples/{exampleName}.txt";
 
-        Console.WriteLine($"Reading text from file '{exampleFile}'...");
+        Console.WriteLine($"Reading expression from file '{exampleFile}'...");
 
         var exampleText = File.ReadAllText(exampleFile);
 
-        Console.WriteLine("Example text:");
+        Console.WriteLine("Example expression:");
         Console.WriteLine(exampleText);
 
         Console.WriteLine();
-        Console.WriteLine("Parsing text...");
+        Console.WriteLine("Parsing expression...");
 
         ILexer lexer = new Lexer(exampleText);
         IGrammarParser parser = new GrammarParser.GrammarParser();
 
         var tree = parser.Parse(lexer);
 
+        Console.WriteLine($"Expression in postfix notation: {tree.RootNode.Attribute}");
+        
         Console.WriteLine("Saving results to file...");
 
         var resultFile = $"out/{exampleName}";

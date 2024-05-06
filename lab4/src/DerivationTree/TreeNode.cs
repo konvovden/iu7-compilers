@@ -11,7 +11,7 @@ public class TreeNode
         TreeNode[]? childNodes = null)
     {
         Text = text;
-        Attribute = attribute;
+        Attribute = attribute.Trim();
         ChildNodes = childNodes ?? Array.Empty<TreeNode>();
     }
 }

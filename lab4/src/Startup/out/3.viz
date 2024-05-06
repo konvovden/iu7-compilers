@@ -1,22 +1,22 @@
 graph tree{
 0 [ label = "<expression>
-Attr: 5 4  ^    61  3   2    +   %    *     10    <>" ]
+Attr: 5 4  ^ 61 3 2  +  %  * 10 <>" ]
 0 -- 1 
 0 -- 2 
 0 -- 3 
 1 [ label = "<arithmetical expression>
-Attr: 5 4  ^    61  3   2    +   %    *    " ]
+Attr: 5 4  ^ 61 3 2  +  %  *" ]
 1 -- 4 
 1 -- 5 
 2 [ label = "<relationship operation symbol>
 Attr: <>" ]
 2 -- 6 
 3 [ label = "<arithmetical expression>
-Attr: 10   " ]
+Attr: 10" ]
 3 -- 7 
 3 -- 8 
 4 [ label = "<term>
-Attr: 5 4  ^    61  3   2    +   %    *   " ]
+Attr: 5 4  ^ 61 3 2  +  %  *" ]
 4 -- 9 
 4 -- 10 
 5 [ label = "<arithmetical expression>'
@@ -25,14 +25,14 @@ Attr: " ]
 6 [ label = "<>
 Attr: <>" ]
 7 [ label = "<term>
-Attr: 10  " ]
+Attr: 10" ]
 7 -- 12 
 7 -- 13 
 8 [ label = "<arithmetical expression>'
 Attr: " ]
 8 -- 14 
 9 [ label = "<factor>
-Attr: 5 4  ^    61  3   2    +   %    *  " ]
+Attr: 5 4  ^ 61 3 2  +  %  *" ]
 9 -- 15 
 9 -- 16 
 10 [ label = "<term>'
@@ -41,7 +41,7 @@ Attr: " ]
 11 [ label = "Eps
 Attr: " ]
 12 [ label = "<factor>
-Attr: 10 " ]
+Attr: 10" ]
 12 -- 18 
 12 -- 19 
 13 [ label = "<term>'
@@ -50,7 +50,7 @@ Attr: " ]
 14 [ label = "Eps
 Attr: " ]
 15 [ label = "<primary expression>
-Attr: 5 4  ^    61  3   2    +   %    * " ]
+Attr: 5 4  ^ 61 3 2  +  %  *" ]
 15 -- 21 
 15 -- 22 
 15 -- 23 
@@ -70,7 +70,7 @@ Attr: " ]
 21 [ label = "(
 Attr: " ]
 22 [ label = "<arithmetical expression>
-Attr: 5 4  ^    61  3   2    +   %    * " ]
+Attr: 5 4  ^ 61 3 2  +  %  *" ]
 22 -- 27 
 22 -- 28 
 23 [ label = ")
@@ -83,7 +83,7 @@ Attr: 10" ]
 26 [ label = "Eps
 Attr: " ]
 27 [ label = "<term>
-Attr: 5 4  ^    61  3   2    +   %    *" ]
+Attr: 5 4  ^ 61 3 2  +  %  *" ]
 27 -- 30 
 27 -- 31 
 28 [ label = "<arithmetical expression>'
@@ -92,18 +92,18 @@ Attr: " ]
 29 [ label = "10
 Attr: 10" ]
 30 [ label = "<factor>
-Attr: 5 4  ^   " ]
+Attr: 5 4  ^" ]
 30 -- 33 
 30 -- 34 
 31 [ label = "<term>'
-Attr: 61  3   2    +   %    *" ]
+Attr: 61 3 2  +  %  *" ]
 31 -- 35 
 31 -- 36 
 31 -- 37 
 32 [ label = "Eps
 Attr: " ]
 33 [ label = "<primary expression>
-Attr: 5 4  ^  " ]
+Attr: 5 4  ^" ]
 33 -- 38 
 33 -- 39 
 33 -- 40 
@@ -114,7 +114,7 @@ Attr: " ]
 Attr: *" ]
 35 -- 42 
 36 [ label = "<factor>
-Attr: 61  3   2    +   %  " ]
+Attr: 61 3 2  +  %" ]
 36 -- 43 
 36 -- 44 
 37 [ label = "<term>'
@@ -123,7 +123,7 @@ Attr: " ]
 38 [ label = "(
 Attr: " ]
 39 [ label = "<arithmetical expression>
-Attr: 5 4  ^  " ]
+Attr: 5 4  ^" ]
 39 -- 46 
 39 -- 47 
 40 [ label = ")
@@ -133,7 +133,7 @@ Attr: " ]
 42 [ label = "*
 Attr: *" ]
 43 [ label = "<primary expression>
-Attr: 61  3   2    +   % " ]
+Attr: 61 3 2  +  %" ]
 43 -- 48 
 43 -- 49 
 43 -- 50 
@@ -143,7 +143,7 @@ Attr: " ]
 45 [ label = "Eps
 Attr: " ]
 46 [ label = "<term>
-Attr: 5 4  ^ " ]
+Attr: 5 4  ^" ]
 46 -- 52 
 46 -- 53 
 47 [ label = "<arithmetical expression>'
@@ -152,7 +152,7 @@ Attr: " ]
 48 [ label = "(
 Attr: " ]
 49 [ label = "<arithmetical expression>
-Attr: 61  3   2    +   % " ]
+Attr: 61 3 2  +  %" ]
 49 -- 55 
 49 -- 56 
 50 [ label = ")
@@ -169,7 +169,7 @@ Attr: " ]
 54 [ label = "Eps
 Attr: " ]
 55 [ label = "<term>
-Attr: 61  3   2    +   %" ]
+Attr: 61 3 2  +  %" ]
 55 -- 60 
 55 -- 61 
 56 [ label = "<arithmetical expression>'
@@ -186,11 +186,11 @@ Attr: 4  ^" ]
 59 [ label = "Eps
 Attr: " ]
 60 [ label = "<factor>
-Attr: 61 " ]
+Attr: 61" ]
 60 -- 67 
 60 -- 68 
 61 [ label = "<term>'
-Attr: 3   2    +   %" ]
+Attr: 3 2  +  %" ]
 61 -- 69 
 61 -- 70 
 61 -- 71 
@@ -217,7 +217,7 @@ Attr: " ]
 Attr: %" ]
 69 -- 77 
 70 [ label = "<factor>
-Attr: 3   2    + " ]
+Attr: 3 2  +" ]
 70 -- 78 
 70 -- 79 
 71 [ label = "<term>'
@@ -238,7 +238,7 @@ Attr: " ]
 77 [ label = "%
 Attr: %" ]
 78 [ label = "<primary expression>
-Attr: 3   2    +" ]
+Attr: 3 2  +" ]
 78 -- 83 
 78 -- 84 
 78 -- 85 
@@ -254,7 +254,7 @@ Attr: 61" ]
 83 [ label = "(
 Attr: " ]
 84 [ label = "<arithmetical expression>
-Attr: 3   2    +" ]
+Attr: 3 2  +" ]
 84 -- 87 
 84 -- 88 
 85 [ label = ")
@@ -262,16 +262,16 @@ Attr: " ]
 86 [ label = "Eps
 Attr: " ]
 87 [ label = "<term>
-Attr: 3  " ]
+Attr: 3" ]
 87 -- 89 
 87 -- 90 
 88 [ label = "<arithmetical expression>'
-Attr: 2    +" ]
+Attr: 2  +" ]
 88 -- 91 
 88 -- 92 
 88 -- 93 
 89 [ label = "<factor>
-Attr: 3 " ]
+Attr: 3" ]
 89 -- 94 
 89 -- 95 
 90 [ label = "<term>'
@@ -281,7 +281,7 @@ Attr: " ]
 Attr: +" ]
 91 -- 97 
 92 [ label = "<term>
-Attr: 2  " ]
+Attr: 2" ]
 92 -- 98 
 92 -- 99 
 93 [ label = "<arithmetical expression>'
@@ -298,7 +298,7 @@ Attr: " ]
 97 [ label = "+
 Attr: +" ]
 98 [ label = "<factor>
-Attr: 2 " ]
+Attr: 2" ]
 98 -- 103 
 98 -- 104 
 99 [ label = "<term>'

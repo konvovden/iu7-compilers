@@ -1,22 +1,22 @@
 graph tree{
 0 [ label = "<expression>
-Attr: 5    4    ==" ]
+Attr: 5 4 ==" ]
 0 -- 1 
 0 -- 2 
 0 -- 3 
 1 [ label = "<arithmetical expression>
-Attr: 5   " ]
+Attr: 5" ]
 1 -- 4 
 1 -- 5 
 2 [ label = "<relationship operation symbol>
 Attr: ==" ]
 2 -- 6 
 3 [ label = "<arithmetical expression>
-Attr: 4   " ]
+Attr: 4" ]
 3 -- 7 
 3 -- 8 
 4 [ label = "<term>
-Attr: 5  " ]
+Attr: 5" ]
 4 -- 9 
 4 -- 10 
 5 [ label = "<arithmetical expression>'
@@ -25,14 +25,14 @@ Attr: " ]
 6 [ label = "==
 Attr: ==" ]
 7 [ label = "<term>
-Attr: 4  " ]
+Attr: 4" ]
 7 -- 12 
 7 -- 13 
 8 [ label = "<arithmetical expression>'
 Attr: " ]
 8 -- 14 
 9 [ label = "<factor>
-Attr: 5 " ]
+Attr: 5" ]
 9 -- 15 
 9 -- 16 
 10 [ label = "<term>'
@@ -41,7 +41,7 @@ Attr: " ]
 11 [ label = "Eps
 Attr: " ]
 12 [ label = "<factor>
-Attr: 4 " ]
+Attr: 4" ]
 12 -- 18 
 12 -- 19 
 13 [ label = "<term>'
