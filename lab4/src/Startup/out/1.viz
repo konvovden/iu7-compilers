@@ -1,0 +1,82 @@
+graph tree{
+0 [ label = "<expression>
+Attr: 5    4    ==" ]
+0 -- 1 
+0 -- 2 
+0 -- 3 
+1 [ label = "<arithmetical expression>
+Attr: 5   " ]
+1 -- 4 
+1 -- 5 
+2 [ label = "<relationship operation symbol>
+Attr: ==" ]
+2 -- 6 
+3 [ label = "<arithmetical expression>
+Attr: 4   " ]
+3 -- 7 
+3 -- 8 
+4 [ label = "<term>
+Attr: 5  " ]
+4 -- 9 
+4 -- 10 
+5 [ label = "<arithmetical expression>'
+Attr: " ]
+5 -- 11 
+6 [ label = "==
+Attr: ==" ]
+7 [ label = "<term>
+Attr: 4  " ]
+7 -- 12 
+7 -- 13 
+8 [ label = "<arithmetical expression>'
+Attr: " ]
+8 -- 14 
+9 [ label = "<factor>
+Attr: 5 " ]
+9 -- 15 
+9 -- 16 
+10 [ label = "<term>'
+Attr: " ]
+10 -- 17 
+11 [ label = "Eps
+Attr: " ]
+12 [ label = "<factor>
+Attr: 4 " ]
+12 -- 18 
+12 -- 19 
+13 [ label = "<term>'
+Attr: " ]
+13 -- 20 
+14 [ label = "Eps
+Attr: " ]
+15 [ label = "<primary expression>
+Attr: 5" ]
+15 -- 21 
+16 [ label = "<factor>'
+Attr: " ]
+16 -- 22 
+17 [ label = "Eps
+Attr: " ]
+18 [ label = "<primary expression>
+Attr: 4" ]
+18 -- 23 
+19 [ label = "<factor>'
+Attr: " ]
+19 -- 24 
+20 [ label = "Eps
+Attr: " ]
+21 [ label = "<number>
+Attr: 5" ]
+21 -- 25 
+22 [ label = "Eps
+Attr: " ]
+23 [ label = "<number>
+Attr: 4" ]
+23 -- 26 
+24 [ label = "Eps
+Attr: " ]
+25 [ label = "5
+Attr: 5" ]
+26 [ label = "4
+Attr: 4" ]
+}

@@ -1,0 +1,172 @@
+graph tree{
+0 [ label = "<expression>
+Attr: 5  4   *   10   /  5    ==" ]
+0 -- 1 
+0 -- 2 
+0 -- 3 
+1 [ label = "<arithmetical expression>
+Attr: 5  4   *   10   / " ]
+1 -- 4 
+1 -- 5 
+2 [ label = "<relationship operation symbol>
+Attr: ==" ]
+2 -- 6 
+3 [ label = "<arithmetical expression>
+Attr: 5   " ]
+3 -- 7 
+3 -- 8 
+4 [ label = "<term>
+Attr: 5  4   *   10   /" ]
+4 -- 9 
+4 -- 10 
+5 [ label = "<arithmetical expression>'
+Attr: " ]
+5 -- 11 
+6 [ label = "==
+Attr: ==" ]
+7 [ label = "<term>
+Attr: 5  " ]
+7 -- 12 
+7 -- 13 
+8 [ label = "<arithmetical expression>'
+Attr: " ]
+8 -- 14 
+9 [ label = "<factor>
+Attr: 5  4   *  " ]
+9 -- 15 
+9 -- 16 
+10 [ label = "<term>'
+Attr: 10   /" ]
+10 -- 17 
+10 -- 18 
+10 -- 19 
+11 [ label = "Eps
+Attr: " ]
+12 [ label = "<factor>
+Attr: 5 " ]
+12 -- 20 
+12 -- 21 
+13 [ label = "<term>'
+Attr: " ]
+13 -- 22 
+14 [ label = "Eps
+Attr: " ]
+15 [ label = "<primary expression>
+Attr: 5  4   * " ]
+15 -- 23 
+15 -- 24 
+15 -- 25 
+16 [ label = "<factor>'
+Attr: " ]
+16 -- 26 
+17 [ label = "<multiply operation symbol>
+Attr: /" ]
+17 -- 27 
+18 [ label = "<factor>
+Attr: 10 " ]
+18 -- 28 
+18 -- 29 
+19 [ label = "<term>'
+Attr: " ]
+19 -- 30 
+20 [ label = "<primary expression>
+Attr: 5" ]
+20 -- 31 
+21 [ label = "<factor>'
+Attr: " ]
+21 -- 32 
+22 [ label = "Eps
+Attr: " ]
+23 [ label = "(
+Attr: " ]
+24 [ label = "<arithmetical expression>
+Attr: 5  4   * " ]
+24 -- 33 
+24 -- 34 
+25 [ label = ")
+Attr: " ]
+26 [ label = "Eps
+Attr: " ]
+27 [ label = "/
+Attr: /" ]
+28 [ label = "<primary expression>
+Attr: 10" ]
+28 -- 35 
+29 [ label = "<factor>'
+Attr: " ]
+29 -- 36 
+30 [ label = "Eps
+Attr: " ]
+31 [ label = "<number>
+Attr: 5" ]
+31 -- 37 
+32 [ label = "Eps
+Attr: " ]
+33 [ label = "<term>
+Attr: 5  4   *" ]
+33 -- 38 
+33 -- 39 
+34 [ label = "<arithmetical expression>'
+Attr: " ]
+34 -- 40 
+35 [ label = "<number>
+Attr: 10" ]
+35 -- 41 
+36 [ label = "Eps
+Attr: " ]
+37 [ label = "5
+Attr: 5" ]
+38 [ label = "<factor>
+Attr: 5 " ]
+38 -- 42 
+38 -- 43 
+39 [ label = "<term>'
+Attr: 4   *" ]
+39 -- 44 
+39 -- 45 
+39 -- 46 
+40 [ label = "Eps
+Attr: " ]
+41 [ label = "10
+Attr: 10" ]
+42 [ label = "<primary expression>
+Attr: 5" ]
+42 -- 47 
+43 [ label = "<factor>'
+Attr: " ]
+43 -- 48 
+44 [ label = "<multiply operation symbol>
+Attr: *" ]
+44 -- 49 
+45 [ label = "<factor>
+Attr: 4 " ]
+45 -- 50 
+45 -- 51 
+46 [ label = "<term>'
+Attr: " ]
+46 -- 52 
+47 [ label = "<number>
+Attr: 5" ]
+47 -- 53 
+48 [ label = "Eps
+Attr: " ]
+49 [ label = "*
+Attr: *" ]
+50 [ label = "<primary expression>
+Attr: 4" ]
+50 -- 54 
+51 [ label = "<factor>'
+Attr: " ]
+51 -- 55 
+52 [ label = "Eps
+Attr: " ]
+53 [ label = "5
+Attr: 5" ]
+54 [ label = "<number>
+Attr: 4" ]
+54 -- 56 
+55 [ label = "Eps
+Attr: " ]
+56 [ label = "4
+Attr: 4" ]
+}
