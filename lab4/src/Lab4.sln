@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Startup", "Startup\Startup.csproj", "{A8FB31FC-4882-4738-9B42-BE3F8F3A59D4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DerivationTree", "DerivationTree\DerivationTree.csproj", "{15AE33AA-B588-4316-8DA8-4142E56727AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrammarParser", "GrammarParser\GrammarParser.csproj", "{D93AC79D-732D-44C6-ABA5-E76D9063EC71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextLexer", "TextLexer\TextLexer.csproj", "{D46BACC9-EE9A-4C38-82F0-9D5A4C2C69F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeVisualization", "TreeVisualization\TreeVisualization.csproj", "{C32F2FF9-9799-4544-A7E1-F13B7346DA9C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A8FB31FC-4882-4738-9B42-BE3F8F3A59D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8FB31FC-4882-4738-9B42-BE3F8F3A59D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8FB31FC-4882-4738-9B42-BE3F8F3A59D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8FB31FC-4882-4738-9B42-BE3F8F3A59D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15AE33AA-B588-4316-8DA8-4142E56727AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15AE33AA-B588-4316-8DA8-4142E56727AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15AE33AA-B588-4316-8DA8-4142E56727AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15AE33AA-B588-4316-8DA8-4142E56727AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D93AC79D-732D-44C6-ABA5-E76D9063EC71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D93AC79D-732D-44C6-ABA5-E76D9063EC71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D93AC79D-732D-44C6-ABA5-E76D9063EC71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D93AC79D-732D-44C6-ABA5-E76D9063EC71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D46BACC9-EE9A-4C38-82F0-9D5A4C2C69F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D46BACC9-EE9A-4C38-82F0-9D5A4C2C69F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D46BACC9-EE9A-4C38-82F0-9D5A4C2C69F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D46BACC9-EE9A-4C38-82F0-9D5A4C2C69F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C32F2FF9-9799-4544-A7E1-F13B7346DA9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C32F2FF9-9799-4544-A7E1-F13B7346DA9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C32F2FF9-9799-4544-A7E1-F13B7346DA9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C32F2FF9-9799-4544-A7E1-F13B7346DA9C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
